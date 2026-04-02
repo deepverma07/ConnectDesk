@@ -35,15 +35,23 @@
         </div>
 
         <div class="p-4 border-t">
-            <div class="flex items-center gap-3 px-4 py-3 bg-gray-50 rounded-3xl">
-                <div class="w-8 h-8 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center font-bold">SA</div>
-                <div class="flex-1">
-                    <div class="font-medium text-sm">Surinder Admin</div>
-                    <div class="text-xs text-green-500">● Online</div>
-                </div>
-                <a href="#" class="text-gray-400 hover:text-red-500">
-                    <i class="fas fa-sign-out-alt"></i>
-                </a>
-            </div>
+    <div class="flex items-center gap-3 px-4 py-3 bg-gray-50 rounded-3xl">
+        <div class="w-8 h-8 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center font-bold">SA</div>
+        <div class="flex-1">
+            <div class="font-medium text-sm">Surinder Admin</div>
+            <div class="text-xs text-green-500">● Online</div>
         </div>
+
+        <!-- Logout link triggers hidden form -->
+        <a href="{{ route('logout') }}" class="text-gray-400 hover:text-red-500"
+           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+
+        <!-- Hidden logout form -->
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+    </div>
+</div>
     </div>
